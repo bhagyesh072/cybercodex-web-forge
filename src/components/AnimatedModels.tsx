@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { CirclePlay, Layers3, Code, CursorPointer, Zap, TrendingUp } from 'lucide-react';
+import { CirclePlay, Layers3, Code, MousePointer, Zap, TrendingUp } from 'lucide-react';
 
 const AnimatedModels = () => {
   const [activeIcon, setActiveIcon] = useState<number | null>(null);
@@ -26,7 +26,7 @@ const AnimatedModels = () => {
     { icon: <Code size={32} />, label: "Clean Code", description: "We write elegant, maintainable code" },
     { icon: <Layers3 size={32} />, label: "Full Stack", description: "End-to-end solutions for complex problems" },
     { icon: <CirclePlay size={32} />, label: "AI & ML", description: "Cutting-edge artificial intelligence" },
-    { icon: <CursorPointer size={32} />, label: "UX Design", description: "Beautiful, intuitive interfaces" },
+    { icon: <MousePointer size={32} />, label: "UX Design", description: "Beautiful, intuitive interfaces" },
     { icon: <Zap size={32} />, label: "Performance", description: "Speed optimized applications" },
     { icon: <TrendingUp size={32} />, label: "Innovation", description: "Pushing boundaries of technology" }
   ];
