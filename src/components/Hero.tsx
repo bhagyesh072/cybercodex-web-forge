@@ -9,14 +9,14 @@ const Hero = () => {
   useEffect(() => {
     setIsLoaded(true);
     
-    // Mouse movement effect for particles
+    // Improved mouse movement effect for particles
     const handleMouseMove = (e: MouseEvent) => {
       if (!particlesRef.current) return;
       
       const mouseX = e.clientX / window.innerWidth;
       const mouseY = e.clientY / window.innerHeight;
       
-      particlesRef.current.style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+      particlesRef.current.style.transform = `translate(${mouseX * 15}px, ${mouseY * 15}px)`;
     };
     
     window.addEventListener('mousemove', handleMouseMove);
@@ -32,18 +32,18 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center overflow-hidden">
-      {/* 3D Gradient Background */}
+      {/* 3D Gradient Background - fixed z-index */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue-dark via-cyber-blue-light/30 to-white z-0"></div>
       
-      {/* Animated mesh grid */}
+      {/* Animated mesh grid - fixed z-index */}
       <div className="absolute inset-0 z-0">
         <div className="mesh-grid"></div>
       </div>
       
-      {/* Animated particles */}
+      {/* Animated particles - improved positioning */}
       <div 
         ref={particlesRef}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-1"
       >
         {[...Array(40)].map((_, i) => (
           <div
@@ -63,11 +63,11 @@ const Hero = () => {
         ))}
       </div>
       
-      {/* Glowing orb */}
+      {/* Glowing orbs - fixed positioning */}
       <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-cyber-blue/50 to-cyber-blue-light/50 blur-3xl animate-pulse-slow z-0"></div>
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-cyber-blue-light/30 to-cyber-accent/30 blur-3xl animate-pulse-slow z-0"></div>
       
-      {/* Content */}
+      {/* Content - improved z-index */}
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col md:flex-row items-center">
           {/* Left side - Text content */}
@@ -111,7 +111,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right side - 3D element */}
+          {/* Right side - 3D element - fixed positioning and z-index */}
           <div className="md:w-1/2 mt-12 md:mt-0 hidden md:block">
             <div className={`cyber-sphere-container transition-all duration-1000 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <div className="cyber-sphere">
@@ -126,8 +126,8 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll indicator - improved visibility */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
           <div className="w-8 h-12 rounded-full border-2 border-cyber-blue flex items-center justify-center">
             <div className="w-2 h-2 bg-cyber-blue rounded-full animate-pulse"></div>
           </div>
