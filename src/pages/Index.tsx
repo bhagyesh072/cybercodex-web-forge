@@ -4,9 +4,9 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import TeamSection from '../components/TeamSection';
 import InternshipSection from '../components/InternshipSection';
-import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import AnimatedModels from '../components/AnimatedModels';
 
 const Index = () => {
   useEffect(() => {
@@ -39,8 +39,8 @@ const Index = () => {
         <Hero />
       </div>
       <TeamSection />
+      <AnimatedModels />
       <InternshipSection />
-      <ProjectsSection />
       <ContactSection />
       <Footer />
     </div>

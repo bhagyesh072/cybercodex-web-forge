@@ -127,6 +127,36 @@
            focus:border-cyber-blue focus:outline-none focus:ring-1 
            focus:ring-cyber-blue transition-colors;
   }
+  
+  /* New animations and styles */
+  .perspective-container {
+    perspective: 1000px;
+  }
+  
+  .tech-card {
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+  }
+  
+  .tech-card.active {
+    z-index: 10;
+  }
+  
+  .tech-card .icon-wrapper {
+    transform: translateZ(20px);
+  }
+  
+  .code-wave {
+    position: relative;
+  }
+  
+  .code-line {
+    animation: wave-motion 10s infinite linear;
+  }
+  
+  .cyber-orb {
+    animation: float 6s infinite ease-in-out;
+  }
 }
 
 .animate-on-scroll {
@@ -138,4 +168,76 @@
 .animate-on-scroll.animated {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* New keyframes animations */
+@keyframes typewriter {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes wave-motion {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes animate-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+@keyframes float-0 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -10px) rotate(5deg); }
+  50% { transform: translate(0, -20px) rotate(0deg); }
+  75% { transform: translate(-10px, -10px) rotate(-5deg); }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-15px, -15px) rotate(-5deg); }
+  66% { transform: translate(15px, -15px) rotate(5deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-20px, 0) rotate(10deg); }
+}
+
+.animate-pulse-slow {
+  animation: animate-pulse 4s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Add to tailwind.config.ts animations */
+.pulse-ring span {
+  animation: ring-pulse 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
 }

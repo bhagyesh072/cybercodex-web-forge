@@ -126,6 +126,14 @@ export default {
 				'pulse': {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(0.95)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -135,7 +143,9 @@ export default {
 				'slide-in': 'slide-in 0.6s ease-out',
 				'typewriter': 'typewriter 2.5s steps(40) forwards',
 				'blink': 'blink 1s step-end infinite',
-				'pulse': 'pulse 2s infinite'
+				'pulse': 'pulse 2s infinite',
+				'float': 'float 6s infinite ease-in-out',
+				'rotate-slow': 'rotate-slow 15s linear infinite'
 			}
 		}
 	},
