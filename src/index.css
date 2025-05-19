@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -157,6 +156,39 @@
   .cyber-orb {
     animation: float 6s infinite ease-in-out;
   }
+  
+  /* New Hero Styles */
+  .mesh-grid {
+    @apply absolute inset-0 opacity-20;
+    background-image: linear-gradient(#2196f3 1px, transparent 1px), linear-gradient(90deg, #2196f3 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: grid-animation 20s linear infinite;
+  }
+  
+  .cyber-sphere-container {
+    @apply relative w-full h-96 flex items-center justify-center;
+  }
+  
+  .cyber-sphere {
+    @apply relative w-64 h-64 flex items-center justify-center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .cyber-sphere-inner {
+    @apply absolute w-48 h-48 rounded-full bg-gradient-to-br from-cyber-blue-light to-cyber-blue opacity-80;
+    animation: rotate-sphere 15s linear infinite;
+  }
+  
+  .cyber-sphere-core {
+    @apply absolute inset-4 rounded-full bg-white opacity-30;
+    animation: pulse 3s infinite ease-in-out;
+  }
+  
+  .cyber-sphere-ring {
+    @apply absolute w-full h-full rounded-full border-4 border-cyber-blue opacity-30;
+    animation: ring-rotate 10s linear infinite;
+  }
 }
 
 .animate-on-scroll {
@@ -170,7 +202,7 @@
   transform: translateY(0);
 }
 
-/* New keyframes animations */
+/* New keyframe animations */
 @keyframes typewriter {
   0% { width: 0%; }
   100% { width: 100%; }
@@ -240,4 +272,58 @@
     transform: scale(1);
     opacity: 0.7;
   }
+}
+
+/* New keyframe animations */
+@keyframes grid-animation {
+  0% {
+    transform: translateY(0) rotateX(65deg);
+  }
+  100% {
+    transform: translateY(20px) rotateX(65deg);
+  }
+}
+
+@keyframes rotate-sphere {
+  0% { transform: rotate3d(1, 1, 1, 0deg); }
+  100% { transform: rotate3d(1, 1, 1, 360deg); }
+}
+
+@keyframes ring-rotate {
+  0% { transform: rotate3d(1, 2, -1, 0deg) scale3d(1, 1, 1); }
+  50% { transform: rotate3d(1, 2, -1, 180deg) scale3d(1.1, 1.1, 1.1); }
+  100% { transform: rotate3d(1, 2, -1, 360deg) scale3d(1, 1, 1); }
+}
+
+/* Add missing animations from earlier code */
+@keyframes float-0 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -10px) rotate(5deg); }
+  50% { transform: translate(0, -20px) rotate(0deg); }
+  75% { transform: translate(-10px, -10px) rotate(-5deg); }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-15px, -15px) rotate(-5deg); }
+  66% { transform: translate(15px, -15px) rotate(5deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-20px, 0) rotate(10deg); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(15px, 10px) rotate(10deg); }
+  75% { transform: translate(-15px, 20px) rotate(-10deg); }
+}
+
+@keyframes float-4 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(20px, -5px) rotate(5deg); }
+  40% { transform: translate(10px, -25px) rotate(10deg); }
+  60% { transform: translate(-10px, -15px) rotate(-5deg); }
+  80% { transform: translate(-20px, -5px) rotate(-10deg); }
 }
