@@ -35,11 +35,11 @@ const TeamSection = () => {
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.animate-on-scroll');
-      
+
       elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
+
         if (elementTop < windowHeight * 0.8) {
           element.classList.add('animated');
         }
@@ -49,7 +49,7 @@ const TeamSection = () => {
     window.addEventListener('scroll', handleScroll);
     // Trigger once to check elements in view on load
     handleScroll();
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -61,30 +61,30 @@ const TeamSection = () => {
         <div className="text-center mb-12">
           <h2 className="section-header inline-block mx-auto">Who We Are</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            At CyberCodex, we're on a mission to drive innovation in technology and create 
-            solutions that make a difference. Our team of passionate experts brings diverse 
+            At CyberCodex, we're on a mission to drive innovation in technology and create
+            solutions that make a difference. Our team of passionate experts brings diverse
             skills to every project we undertake.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <TeamMember 
-            name="Divyansh Dhar Dwivedi" 
-            role="Founder" 
+          <TeamMember
+            name="Divyansh Dhar Dwivedi"
+            role="Founder"
             bio="Tech visionary with expertise in AI and software architecture. Passionate about creating innovative solutions that push technological boundaries."
           />
-          
-          <TeamMember 
-            name="Pratyush Mishra" 
-            role="Team Leader" 
+
+          <TeamMember
+            name="Pratyush Mishra"
+            role="Team Leader"
             bio="Experienced developer and team leader who excels at guiding projects from concept to completion with a focus on excellence and innovation."
           />
-          
-          <TeamMember 
-            name="Mr. Abhishek" 
-            role="Mentor" 
+
+          <TeamMember
+            name="Mr. Abhishek"
+            role="Mentor"
             bio="Industry veteran providing guidance and expertise to help shape our technical direction and strategic vision."
-            hasAvatar={false}
+          // hasAvatar={false}
           />
         </div>
       </div>
