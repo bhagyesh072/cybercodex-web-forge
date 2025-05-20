@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div className="relative min-h-screen flex items-center overflow-hidden pt-28 md:pt-20">
       {/* 3D Gradient Background - fixed z-index */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue-dark via-cyber-blue-light/30 to-white z-0"></div>
       
@@ -67,22 +67,22 @@ const Hero = () => {
       <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-cyber-blue/50 to-cyber-blue-light/50 blur-3xl animate-pulse-slow z-0"></div>
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-cyber-blue-light/30 to-cyber-accent/30 blur-3xl animate-pulse-slow z-0"></div>
       
-      {/* Content - improved z-index */}
+      {/* Content - improved z-index and spacing */}
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col md:flex-row items-center">
-          {/* Left side - Text content */}
+          {/* Left side - Text content with improved visibility */}
           <div className={`max-w-2xl transition-all duration-1000 md:w-1/2 ${isLoaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <div className="flex items-center mb-4 space-x-2">
               <Sparkles className="text-cyber-blue w-6 h-6" />
               <p className="text-cyber-blue font-semibold text-lg">Innovate. Create. Transform.</p>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyber-blue-dark via-cyber-blue to-cyber-accent">
-              Welcome to <span className="font-extrabold">CyberCodex</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyber-blue-dark via-cyber-blue to-cyber-accent">
+              Welcome to <span className="font-extrabold block md:inline">CyberCodex</span>
             </h1>
             
-            <div className="h-12 mb-6 relative overflow-hidden">
-              <span className="hero-animated-text text-xl md:text-3xl text-cyber-charcoal font-light">
+            <div className="h-16 md:h-12 mb-6 relative overflow-visible">
+              <span className="hero-animated-text text-xl md:text-2xl lg:text-3xl text-cyber-charcoal font-light">
                 Where Technology Meets Innovation
               </span>
             </div>
