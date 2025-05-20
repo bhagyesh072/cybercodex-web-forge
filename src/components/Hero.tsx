@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* 3D Gradient Background - fixed z-index */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue-dark via-cyber-blue-light/30 to-white z-0"></div>
       
